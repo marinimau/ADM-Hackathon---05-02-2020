@@ -9,44 +9,61 @@
 ### MongoDB
 
 Start server:
-```
-mongod --port 27018 --dbpath /Users/mauromarini/Documents/hackathon/mongo_data --replSet “hackathon”
-
+```mongod --port 27018 --dbpath /Users/mauromarini/Documents/hackathon/mongo_data --replSet “hackathon”
 ```
 Connect to server:
-```
-mongo --port 27018
-
+```mongo --port 27018
 ```
 Make the MongoDB node primary (in the mongo shell):  
-
-```
-rs.initiate()
-
+```rs.initiate()
 ```
 
-KAFKA *** change IP address
+### KAFKA *** change IP address
 
-Start zookeeper:    zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties
-Start server Kafka:     kafka-server-start /usr/local/etc/kafka/server.properties
-Create topic test:    kafka-topics --create --zookeeper 192.168.1.28:2181 --replication-factor 1 --partitions 1 --topic test
-Console del produttore:  kafka-console-producer​ --broker-list 192.168.1.28:9092 --topic​ test
-Console del consumatore:   kafka-console-consumer --bootstrap-server 192.168.1.28:9092 --topic test —from-beginning
-Start producer script:    /Users/mauromarini/Documents/code_kafka_changestreams/kafkaproducer.py
-Start consumer script:    python /Users/mauromarini/Documents/code_kafka_changestreams/kafkaconsumer.py
+Start zookeeper:    
+```zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties
+```
 
-CREATE THESE 2 TOPICS STATICALLY:
+Start server Kafka:     
+```kafka-server-start /usr/local/etc/kafka/server.properties
+```
 
-- data_in
-- mongo_in
+Create topic:    
+```kafka-topics --create --zookeeper 192.168.1.28:2181 --replication-factor 1 --partitions 1 --topic nome_topic
+```
+
+Console del produttore:  
+```kafka-console-producer​ --broker-list 192.168.1.28:9092 --topic​ nome_topic
+```
+
+Console del consumatore:   
+```kafka-console-consumer --bootstrap-server 192.168.1.28:9092 --topic nome_topic —from-beginning
+```
+
+Start producer script:    
+```/Users/mauromarini/Documents/code_kafka_changestreams/kafkaproducer.py
+```
+
+Start consumer script:    
+```python /Users/mauromarini/Documents/code_kafka_changestreams/kafkaconsumer.py
+```
+
+### Create these 2 topics statically:
+
+```data_in
+```
+```mongo_in
+```
 
 
-CONFIGURE POSTEGRESQL:
+### CONFIGURE POSTEGRESQL:
 
-SQL.postegre_creation.sql
+You can find the instrcutions in the following file:
+```./SQL/postegre_creation.sql
+```
 
 
-START PYTHON SCRIPTS IN THIS ORDER:
+## START PYTHON SCRIPTS IN THIS ORDER:
 
 1. Main.py from its folder (this simulate data arrival)
 2. postgresql.postgreconsumer.py (to read the Kafka stream)
