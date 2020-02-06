@@ -1,5 +1,11 @@
 # [ADM] Hackathon 05-02-2020
 
+## Description
+
+The system simulates the VISA-transaction data management  for analytics. It must receive data from an input data stream (Main.py) that simulates data arrival. The data must be distributed to two types of clients:
+- An internal analysis team: they can perform geographical queries or use a GIS interface (like Q-GIS)
+- External analysis companies: these companies need data streams composed by one or more shop categories based on their interests. 
+
 ## Architecture
 
 ![Architecture](https://github.com/marinimau/ADM-Hackathon---05-02-2020/blob/master/hackathon.png)
