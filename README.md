@@ -82,7 +82,7 @@ You can find the instrcutions in the following file:
 ```
 
 
-## Start Python scripts following this order:
+### Start Python scripts following this order:
 
 1. Main.py from its folder (this simulate data arrival)
 2. postgresql.postgreconsumer.py (to read the Kafka stream)
