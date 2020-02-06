@@ -9,13 +9,16 @@
 ### MongoDB
 
 Start server:
-```mongod --port 27018 --dbpath /Users/mauromarini/Documents/hackathon/mongo_data --replSet “hackathon”
+```
+mongod --port 27018 --dbpath /Users/mauromarini/Documents/hackathon/mongo_data --replSet “hackathon”
 ```
 Connect to server:
-```mongo --port 27018
+```
+mongo --port 27018
 ```
 Make the MongoDB node primary (in the mongo shell):  
-```rs.initiate()
+```
+rs.initiate()
 ```
 
 ### KAFKA *** change IP address
@@ -68,7 +71,8 @@ mongo_in
 ### Configure PostegreSQL:
 
 You can find the instrcutions in the following file:
-```./SQL/postegre_creation.sql
+```
+./SQL/postegre_creation.sql
 ```
 
 
