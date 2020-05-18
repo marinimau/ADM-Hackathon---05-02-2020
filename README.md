@@ -10,13 +10,13 @@ The system simulates the VISA-transaction data management  for analytics. It mus
 
 ![Architecture](https://github.com/marinimau/ADM-Hackathon---05-02-2020/blob/master/hackathon.png)
 
-## Intructions
+## Intructions (MacOS paths)
 
 ### MongoDB
 
 Start server:
 ```
-mongod --port 27018 --dbpath /Users/mauromarini/Documents/hackathon/mongo_data --replSet “hackathon”
+mongod --port 27018 --dbpath /Users/[your-username]/Documents/hackathon/mongo_data --replSet “hackathon”
 ```
 Connect to server:
 ```
@@ -56,12 +56,12 @@ kafka-console-consumer --bootstrap-server 192.168.1.28:9092 --topic nome_topic �
 
 Start producer script:    
 ```
-/Users/mauromarini/Documents/code_kafka_changestreams/kafkaproducer.py
+/Users/[your-usersname]/Documents/code_kafka_changestreams/kafkaproducer.py
 ```
 
 Start consumer script:    
 ```
-python /Users/mauromarini/Documents/code_kafka_changestreams/kafkaconsumer.py
+python /Users/[your-usersname]/Documents/code_kafka_changestreams/kafkaconsumer.py
 ```
 
 ### Create these 2 topics statically:
