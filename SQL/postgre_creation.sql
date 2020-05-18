@@ -1,3 +1,7 @@
+CREATE SCHEMA visa;
+
+--make sure to add PostGis extension to visa
+
 CREATE TABLE visa.nyc_purchases(
 	p_ID serial PRIMARY KEY,
 	c_ID bigint NOT NULL,
